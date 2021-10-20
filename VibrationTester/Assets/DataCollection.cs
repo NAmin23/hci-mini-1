@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 
 
-public class DataCollection : MonoBehaviour
+public class DataCollection : FullVibrate
 {
 
     //[SerializeField] InputField feedback1;
@@ -14,7 +14,7 @@ public class DataCollection : MonoBehaviour
 
     public void Send()
     {
-        StartCoroutine(Post("hey there"));
+        StartCoroutine(Post(pressCount.ToString()));
     }
 
     IEnumerator Post(string s1)

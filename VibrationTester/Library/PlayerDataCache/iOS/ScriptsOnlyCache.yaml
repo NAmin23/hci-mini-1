@@ -1,7 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - ButtonVibrate
+    - DataCollection
+    - FullVibrate
     - Vibrate
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -17,6 +18,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.Physics2DRaycaster
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
@@ -33,19 +35,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
     - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 65
-      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -62,15 +60,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2902}
     - Class: 114
-      Script: {instanceID: 4968}
+      Script: {instanceID: 4012}
     - Class: 114
-      Script: {instanceID: 5252}
+      Script: {instanceID: 4562}
     - Class: 114
-      Script: {instanceID: 5700}
+      Script: {instanceID: 4974}
     - Class: 114
-      Script: {instanceID: 21398}
+      Script: {instanceID: 5258}
     - Class: 114
-      Script: {instanceID: 21496}
+      Script: {instanceID: 5706}
+    - Class: 114
+      Script: {instanceID: 6236}
+    - Class: 114
+      Script: {instanceID: 7354}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -78,6 +80,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -474,6 +478,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Vibrate
+  - hash:
+      serializedVersion: 2
       Hash: fd68d84f33fad85aac38f2739c0ee270
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -484,6 +494,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCancelMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: c374dfb5976202d7022392dec71a6639
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Accelerometer
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -532,6 +548,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DataCollection
   - hash:
       serializedVersion: 2
       Hash: bcaee4c2a83047257b5f47d6ed264b75
@@ -810,6 +832,12 @@ ScriptsOnlyBuild:
     className: Variables
   - hash:
       serializedVersion: 2
+      Hash: 46ceda5cc30528989f67ef7ff065cf25
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonVibrate
+  - hash:
+      serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
     assemblyName: Unity.VisualScripting.State.dll
     namespaceName: Unity.VisualScripting
@@ -852,23 +880,17 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
+      Hash: 7a4ea33a8fd8427c113694368383b790
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FullVibrate
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 4c3c00bf9e4e834c38e63ee471bf0bcb
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ButtonVibrate
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Vibrate
   platform: 9
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/acryl/OneDrive/Desktop/TestApp
+  playerPath: C:/Users/acryl/OneDrive/Desktop/BuildFolder

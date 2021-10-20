@@ -9,6 +9,7 @@ public class FullVibrate : MonoBehaviour, IPointerDownHandler
 {
     // Start is called before the first frame update
 
+    //This instance is involved in shake detection
     #region Instance
     private static Accelerometer instance;
     protected bool shake;
@@ -33,6 +34,90 @@ public class FullVibrate : MonoBehaviour, IPointerDownHandler
     }
     #endregion
 
+    //This region has enable emoji functions
+    #region
+
+    public GameObject angry;
+    public GameObject like;
+    public GameObject yay;
+    public GameObject love;
+    public GameObject haha;
+    public GameObject sad;
+
+    void enableAngry()
+    {
+        angry.SetActive(true);
+        like.SetActive(false);
+        yay.SetActive(false);
+        love.SetActive(false);
+        sad.SetActive(false);
+        haha.SetActive(false);
+    }
+
+    void enableLike()
+    {
+        angry.SetActive(false);
+        like.SetActive(true);
+        yay.SetActive(false);
+        love.SetActive(false);
+        sad.SetActive(false);
+        haha.SetActive(false);
+    }
+
+    void enableYay()
+    {
+        angry.SetActive(false);
+        like.SetActive(false);
+        yay.SetActive(true);
+        love.SetActive(false);
+        sad.SetActive(false);
+        haha.SetActive(false);
+    }
+
+    void enableLove()
+    {
+        angry.SetActive(false);
+        like.SetActive(false);
+        yay.SetActive(false);
+        love.SetActive(true);
+        sad.SetActive(false);
+        haha.SetActive(false);
+    }
+
+    void enableSad()
+    {
+        angry.SetActive(false);
+        like.SetActive(false);
+        yay.SetActive(false);
+        love.SetActive(false);
+        sad.SetActive(true);
+        haha.SetActive(false);
+    }
+    void enableHaha()
+    {
+        angry.SetActive(false);
+        like.SetActive(false);
+        yay.SetActive(false);
+        love.SetActive(false);
+        sad.SetActive(false);
+        haha.SetActive(true);
+    }
+
+    void disableAll()
+    {
+        angry.SetActive(false);
+        like.SetActive(false);
+        yay.SetActive(false);
+        love.SetActive(false);
+        sad.SetActive(false);
+        haha.SetActive(false);
+    }
+
+    #endregion
+
+
+    //This region does shake detection
+    #region
     [Header("Shake Detection")]
     public Action OnShake;
     [SerializeField] private float shakeDetectionThreshold = 2.0f;
@@ -40,6 +125,8 @@ public class FullVibrate : MonoBehaviour, IPointerDownHandler
     private float lowPassKernelWidthInSeconds = 1.0f;
     private float lowPassfilterFactor;
     private Vector3 lowPassValue;
+    #endregion
+
 
     public Button yourButton;
     public AudioSource audioData;
@@ -51,8 +138,13 @@ public class FullVibrate : MonoBehaviour, IPointerDownHandler
     private int finalCount;
     private bool pressed;
 
+    private float timeOfLastPress = 0.0f;
+    protected string Information = "";
+
     void Start()
     {
+        disableAll();
+
         Button btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
 
@@ -73,8 +165,9 @@ public class FullVibrate : MonoBehaviour, IPointerDownHandler
         // Shake Detection - Sets pressCount to zero
         if (deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold)
         {
-            pressCount = 0;
+            reset();
             eraseData.Play();
+            Information = Information + " shake at" + Time.time.ToString();
         }
 
         if (pressed == true)
@@ -94,15 +187,60 @@ public class FullVibrate : MonoBehaviour, IPointerDownHandler
         }
     }
 
+    void incrementCount()
+    {
+        if(pressCount <= 6)
+        {
+            pressCount++;
+        }
+        switch(pressCount)
+        {
+            case 1:
+                enableLike();
+                break;
+            case 2:
+                enableLove();
+                break;
+            case 3:
+                enableHaha();
+                break;
+            case 4:
+                enableYay();
+                break;
+            case 5:
+                enableSad();
+                break;
+            case 6:
+                enableAngry();
+                break;
+            default:
+                enableAngry();
+                break;
+        }
+    }
+
+    void reset()
+    {
+        pressCount = 0;
+        timeOfLastPress = 0.0f;
+    }
+
     void TaskOnClick()
     {
         //Runs on RELEASE, not on PRESS
+
+        if(Time.time - timeOfLastPress > 5f) //If its been more than 5 seconds, record as accidental press
+        {
+            reset();
+            Information = Information + " reset at " + Time.time.ToString();
+        }
+        Information = Information + " " + pressCount.ToString();
+
         Handheld.Vibrate();
-
         audioData.Play();
+        incrementCount();
 
-        pressCount++;
-        Debug.Log(pressCount);
+        timeOfLastPress = Time.time;
         pressed = false;
     }
 
@@ -110,12 +248,5 @@ public class FullVibrate : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         pressed = true;
-        Debug.Log(pressed);
     }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        //Debug.Log(this.gameObject.name + " Was Released.");
-    }
-    
 }
