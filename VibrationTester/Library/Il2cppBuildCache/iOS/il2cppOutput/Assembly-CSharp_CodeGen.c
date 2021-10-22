@@ -76,12 +76,12 @@ extern void FullVibrate_Start_mB9DF49CC0EEBCB182DD7D70CCDFEE50B691581F0 (void);
 extern void FullVibrate_Update_mFC9543AFA52397E98BB14C8B96FD0E1EB80C8E44 (void);
 // 0x00000020 System.Void FullVibrate::incrementCount()
 extern void FullVibrate_incrementCount_m8001D6D727BCCF4F4D993B704AE967E2D2E9806C (void);
-// 0x00000021 System.Void FullVibrate::TaskOnClick()
+// 0x00000021 System.Void FullVibrate::reset()
+extern void FullVibrate_reset_m2C868CE8EB0754510D758B952326AC5B4F6A3140 (void);
+// 0x00000022 System.Void FullVibrate::TaskOnClick()
 extern void FullVibrate_TaskOnClick_m06A53F42DC637F857FA22DEDEBB433311E8C4BB9 (void);
-// 0x00000022 System.Void FullVibrate::OnPointerDown(UnityEngine.EventSystems.PointerEventData)
+// 0x00000023 System.Void FullVibrate::OnPointerDown(UnityEngine.EventSystems.PointerEventData)
 extern void FullVibrate_OnPointerDown_mD5FBE04600E20C322C76E7BEB0D55CD75B643E02 (void);
-// 0x00000023 System.Void FullVibrate::OnPointerUp(UnityEngine.EventSystems.PointerEventData)
-extern void FullVibrate_OnPointerUp_m879C29C96B39CE2362A381598EE71F583E9B644F (void);
 // 0x00000024 System.Void FullVibrate::.ctor()
 extern void FullVibrate__ctor_m3C25922FB431EFE86A41F5443A418EDFFA9BFEA4 (void);
 // 0x00000025 System.Void Vibrate::Vibrat()
@@ -122,9 +122,9 @@ static Il2CppMethodPointer s_methodPointers[38] =
 	FullVibrate_Start_mB9DF49CC0EEBCB182DD7D70CCDFEE50B691581F0,
 	FullVibrate_Update_mFC9543AFA52397E98BB14C8B96FD0E1EB80C8E44,
 	FullVibrate_incrementCount_m8001D6D727BCCF4F4D993B704AE967E2D2E9806C,
+	FullVibrate_reset_m2C868CE8EB0754510D758B952326AC5B4F6A3140,
 	FullVibrate_TaskOnClick_m06A53F42DC637F857FA22DEDEBB433311E8C4BB9,
 	FullVibrate_OnPointerDown_mD5FBE04600E20C322C76E7BEB0D55CD75B643E02,
-	FullVibrate_OnPointerUp_m879C29C96B39CE2362A381598EE71F583E9B644F,
 	FullVibrate__ctor_m3C25922FB431EFE86A41F5443A418EDFFA9BFEA4,
 	Vibrate_Vibrat_m5BF8CF5E271DE2B189C40C82B5BAA903F54B90BE,
 	Vibrate__ctor_m4AF831A00A9C72F02E8FDB6EF912009D90D54633,
@@ -164,7 +164,7 @@ static const int32_t s_InvokerIndices[38] =
 	1361,
 	1361,
 	1361,
-	1123,
+	1361,
 	1123,
 	1361,
 	1361,

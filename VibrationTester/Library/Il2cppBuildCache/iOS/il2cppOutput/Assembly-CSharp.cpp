@@ -128,7 +128,6 @@ struct ButtonClickedEvent_tE6D6D94ED8100451CF00D2BED1FB2253F37BB14F;
 struct U3CPostU3Ed__2_t4C5589FEE8A6A2B8E7EA191AA4949CED93FD0F32;
 
 IL2CPP_EXTERN_C RuntimeClass* Accelerometer_tD220ED1E354538B93FFAF1878C578883889765E8_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Boolean_t07D1E3F34E4813023D64F584DFF7B34C9D922F37_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319_il2cpp_TypeInfo_var;
@@ -141,13 +140,16 @@ IL2CPP_EXTERN_C RuntimeClass* U3CPostU3Ed__2_t4C5589FEE8A6A2B8E7EA191AA4949CED93
 IL2CPP_EXTERN_C RuntimeClass* UnityAction_t22E545F8BE0A62EE051C6A83E209587A0DB1C099_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WWWForm_t078274293DA1BDA9AB5689AF8BCBF0EE17A2BABB_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral1A14EF647EF9DE4C12BA49942F05FDFBFB847864;
+IL2CPP_EXTERN_C String_t* _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745;
 IL2CPP_EXTERN_C String_t* _stringLiteral2A666E3286BD38ACA71097971EFF8B2EA3716297;
 IL2CPP_EXTERN_C String_t* _stringLiteral35BF8BB42A26A9C66C25D295D94E6179CB8C2D85;
+IL2CPP_EXTERN_C String_t* _stringLiteral43A280DDD2B8E3CAF82844576191DF997082E132;
 IL2CPP_EXTERN_C String_t* _stringLiteral605BB73B574B8FA2CD76525FF8CBF66332BFE67F;
 IL2CPP_EXTERN_C String_t* _stringLiteral632B8F6642FE383B4C98583AC9DDC5EF67CFC2AC;
 IL2CPP_EXTERN_C String_t* _stringLiteralB5051E357541FFA8B6695A0C082000561466EE05;
-IL2CPP_EXTERN_C String_t* _stringLiteralB8D96D6208C5DD8529C40639D5CE9BC9813199EB;
 IL2CPP_EXTERN_C String_t* _stringLiteralC086C58C917B4191B028118E829553BDE960A9E8;
+IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
+IL2CPP_EXTERN_C String_t* _stringLiteralE9BD562C3D7043B864E8D7292B9784C2E9984BF0;
 IL2CPP_EXTERN_C String_t* _stringLiteralFFCE2B1D00E6BF84D22ACAA1AC71B8D79A5923C5;
 IL2CPP_EXTERN_C const RuntimeMethod* ButtonVibrate_TaskOnClick_m76C158E6811FA5FDE7EE67455E842B7572CCBF1B_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisButton_tA893FC15AB26E1439AC25BDCA7079530587BB65D_mED8C9575844B41F67CB4C2B13685FC0174CB61BC_RuntimeMethod_var;
@@ -2939,25 +2941,6 @@ public:
 };
 
 
-// DataCollection
-struct DataCollection_t1BFF1BB93F4EB29799BD32F2A9CDCD030D6163E6  : public MonoBehaviour_t37A501200D970A8257124B0EAE00A0FF3DDC354A
-{
-public:
-	// System.String DataCollection::URL
-	String_t* ___URL_4;
-
-public:
-	inline static int32_t get_offset_of_URL_4() { return static_cast<int32_t>(offsetof(DataCollection_t1BFF1BB93F4EB29799BD32F2A9CDCD030D6163E6, ___URL_4)); }
-	inline String_t* get_URL_4() const { return ___URL_4; }
-	inline String_t** get_address_of_URL_4() { return &___URL_4; }
-	inline void set_URL_4(String_t* value)
-	{
-		___URL_4 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___URL_4), (void*)value);
-	}
-};
-
-
 // FullVibrate
 struct FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82  : public MonoBehaviour_t37A501200D970A8257124B0EAE00A0FF3DDC354A
 {
@@ -3004,6 +2987,10 @@ public:
 	int32_t ___finalCount_24;
 	// System.Boolean FullVibrate::pressed
 	bool ___pressed_25;
+	// System.Single FullVibrate::timeOfLastPress
+	float ___timeOfLastPress_26;
+	// System.String FullVibrate::Information
+	String_t* ___Information_27;
 
 public:
 	inline static int32_t get_offset_of_shake_5() { return static_cast<int32_t>(offsetof(FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82, ___shake_5)); }
@@ -3184,6 +3171,23 @@ public:
 	{
 		___pressed_25 = value;
 	}
+
+	inline static int32_t get_offset_of_timeOfLastPress_26() { return static_cast<int32_t>(offsetof(FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82, ___timeOfLastPress_26)); }
+	inline float get_timeOfLastPress_26() const { return ___timeOfLastPress_26; }
+	inline float* get_address_of_timeOfLastPress_26() { return &___timeOfLastPress_26; }
+	inline void set_timeOfLastPress_26(float value)
+	{
+		___timeOfLastPress_26 = value;
+	}
+
+	inline static int32_t get_offset_of_Information_27() { return static_cast<int32_t>(offsetof(FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82, ___Information_27)); }
+	inline String_t* get_Information_27() const { return ___Information_27; }
+	inline String_t** get_address_of_Information_27() { return &___Information_27; }
+	inline void set_Information_27(String_t* value)
+	{
+		___Information_27 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___Information_27), (void*)value);
+	}
 };
 
 struct FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82_StaticFields
@@ -3219,6 +3223,25 @@ struct Vibrate_t7DB14C9CFC745B34A3EC188192A7328607935773  : public MonoBehaviour
 public:
 
 public:
+};
+
+
+// DataCollection
+struct DataCollection_t1BFF1BB93F4EB29799BD32F2A9CDCD030D6163E6  : public FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82
+{
+public:
+	// System.String DataCollection::URL
+	String_t* ___URL_28;
+
+public:
+	inline static int32_t get_offset_of_URL_28() { return static_cast<int32_t>(offsetof(DataCollection_t1BFF1BB93F4EB29799BD32F2A9CDCD030D6163E6, ___URL_28)); }
+	inline String_t* get_URL_28() const { return ___URL_28; }
+	inline String_t** get_address_of_URL_28() { return &___URL_28; }
+	inline void set_URL_28(String_t* value)
+	{
+		___URL_28 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___URL_28), (void*)value);
+	}
 };
 
 
@@ -3540,18 +3563,28 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Object_get_name_m0C7BC870ED2F0DC5A2
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Handheld_Vibrate_m521B854160443BEBA8D2D3BE63641000E1DAA82E (const RuntimeMethod* method);
 // System.Void UnityEngine.AudioSource::Play()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioSource_Play_mED16664B8F8F3E4D68785C8C00FC96C4DF053AE1 (AudioSource_tC4BF65AF8CDCAA63724BB3CA59A7A29249269E6B * __this, const RuntimeMethod* method);
+// System.String System.Int32::ToString()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411 (int32_t* __this, const RuntimeMethod* method);
 // System.Collections.IEnumerator DataCollection::Post(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DataCollection_Post_m4A550CC8508A063F226F49CF2A11213E05AF032B (DataCollection_t1BFF1BB93F4EB29799BD32F2A9CDCD030D6163E6 * __this, String_t* ___s10, const RuntimeMethod* method);
 // UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine(System.Collections.IEnumerator)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Coroutine_t899D5232EF542CB8BA70AF9ECEECA494FAA9CCB7 * MonoBehaviour_StartCoroutine_m3E33706D38B23CDD179E99BAD61E32303E9CC719 (MonoBehaviour_t37A501200D970A8257124B0EAE00A0FF3DDC354A * __this, RuntimeObject* ___routine0, const RuntimeMethod* method);
 // System.Void DataCollection/<Post>d__2::.ctor(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPostU3Ed__2__ctor_m76436E889DC820EAE0482B7BB9BBD6B016FED64D (U3CPostU3Ed__2_t4C5589FEE8A6A2B8E7EA191AA4949CED93FD0F32 * __this, int32_t ___U3CU3E1__state0, const RuntimeMethod* method);
+// System.Void FullVibrate::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate__ctor_m3C25922FB431EFE86A41F5443A418EDFFA9BFEA4 (FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.GameObject::SetActive(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86 (GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * __this, bool ___value0, const RuntimeMethod* method);
 // System.Void FullVibrate::disableAll()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_disableAll_mEFC31365A6551B909C107B99E77DC72498E8C25D (FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82 * __this, const RuntimeMethod* method);
-// System.String System.Int32::ToString()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411 (int32_t* __this, const RuntimeMethod* method);
+// System.Void FullVibrate::reset()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_reset_m2C868CE8EB0754510D758B952326AC5B4F6A3140 (FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82 * __this, const RuntimeMethod* method);
+// System.Single UnityEngine.Time::get_time()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Time_get_time_m1A186074B1FCD448AB13A4B9D715AB9ED0B40844 (const RuntimeMethod* method);
+// System.String System.Single::ToString()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Single_ToString_m80E7ABED4F4D73F2BE19DDB80D3D92FCD8DFA010 (float* __this, const RuntimeMethod* method);
+// System.String System.String::Concat(System.String,System.String,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44 (String_t* ___str00, String_t* ___str11, String_t* ___str22, const RuntimeMethod* method);
 // System.Void FullVibrate::enableLike()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_enableLike_mBAF93B48684BF6B8BCE7B330D90F36BEC758E975 (FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82 * __this, const RuntimeMethod* method);
 // System.Void FullVibrate::enableLove()
@@ -3912,18 +3945,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ButtonVibrate__ctor_m554A917F8E5FBB750F5
 // System.Void DataCollection::Send()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataCollection_Send_m0EC3FA6FB07A4C7219C15C3B28D628D5E764514B (DataCollection_t1BFF1BB93F4EB29799BD32F2A9CDCD030D6163E6 * __this, const RuntimeMethod* method)
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB8D96D6208C5DD8529C40639D5CE9BC9813199EB);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// StartCoroutine(Post("hey there"));
-		RuntimeObject* L_0;
-		L_0 = DataCollection_Post_m4A550CC8508A063F226F49CF2A11213E05AF032B(__this, _stringLiteralB8D96D6208C5DD8529C40639D5CE9BC9813199EB, /*hidden argument*/NULL);
-		Coroutine_t899D5232EF542CB8BA70AF9ECEECA494FAA9CCB7 * L_1;
-		L_1 = MonoBehaviour_StartCoroutine_m3E33706D38B23CDD179E99BAD61E32303E9CC719(__this, L_0, /*hidden argument*/NULL);
+		// StartCoroutine(Post(pressCount.ToString()));
+		int32_t* L_0 = ((FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82 *)__this)->get_address_of_pressCount_23();
+		String_t* L_1;
+		L_1 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_0, /*hidden argument*/NULL);
+		RuntimeObject* L_2;
+		L_2 = DataCollection_Post_m4A550CC8508A063F226F49CF2A11213E05AF032B(__this, L_1, /*hidden argument*/NULL);
+		Coroutine_t899D5232EF542CB8BA70AF9ECEECA494FAA9CCB7 * L_3;
+		L_3 = MonoBehaviour_StartCoroutine_m3E33706D38B23CDD179E99BAD61E32303E9CC719(__this, L_2, /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -3961,8 +3991,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataCollection__ctor_m35BFBFBD90A852C84D
 	}
 	{
 		// string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdg8k-bpGPQ3LPOd7M6pYCioKyzJVepYseN6pVydS7aVvn5yw/formResponse";
-		__this->set_URL_4(_stringLiteralC086C58C917B4191B028118E829553BDE960A9E8);
-		MonoBehaviour__ctor_mC0995D847F6A95B1A553652636C38A2AA8B13BED(__this, /*hidden argument*/NULL);
+		__this->set_URL_28(_stringLiteralC086C58C917B4191B028118E829553BDE960A9E8);
+		FullVibrate__ctor_m3C25922FB431EFE86A41F5443A418EDFFA9BFEA4(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -4342,12 +4372,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_Update_mFC9543AFA52397E98BB1
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1A14EF647EF9DE4C12BA49942F05FDFBFB847864);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral43A280DDD2B8E3CAF82844576191DF997082E132);
 		s_Il2CppMethodInitialized = true;
 	}
 	Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  V_1;
 	memset((&V_1), 0, sizeof(V_1));
+	float V_2 = 0.0f;
+	int32_t V_3 = 0;
 	{
 		// Vector3 acceleration = Input.acceleration;
 		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_0;
@@ -4372,82 +4405,198 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_Update_mFC9543AFA52397E98BB1
 		float L_9 = __this->get_shakeDetectionThreshold_13();
 		if ((!(((float)L_8) >= ((float)L_9))))
 		{
-			goto IL_004c;
+			goto IL_006e;
 		}
 	}
 	{
-		// pressCount = 0;
-		__this->set_pressCount_23(0);
+		// reset();
+		FullVibrate_reset_m2C868CE8EB0754510D758B952326AC5B4F6A3140(__this, /*hidden argument*/NULL);
 		// eraseData.Play();
 		AudioSource_tC4BF65AF8CDCAA63724BB3CA59A7A29249269E6B * L_10 = __this->get_eraseData_21();
 		NullCheck(L_10);
 		AudioSource_Play_mED16664B8F8F3E4D68785C8C00FC96C4DF053AE1(L_10, /*hidden argument*/NULL);
+		// Information = Information + " shake at" + Time.time.ToString();
+		String_t* L_11 = __this->get_Information_27();
+		float L_12;
+		L_12 = Time_get_time_m1A186074B1FCD448AB13A4B9D715AB9ED0B40844(/*hidden argument*/NULL);
+		V_2 = L_12;
+		String_t* L_13;
+		L_13 = Single_ToString_m80E7ABED4F4D73F2BE19DDB80D3D92FCD8DFA010((float*)(&V_2), /*hidden argument*/NULL);
+		String_t* L_14;
+		L_14 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_11, _stringLiteral43A280DDD2B8E3CAF82844576191DF997082E132, L_13, /*hidden argument*/NULL);
+		__this->set_Information_27(L_14);
 	}
 
-IL_004c:
+IL_006e:
+	{
+		// switch (pressCount)
+		int32_t L_15 = __this->get_pressCount_23();
+		V_3 = L_15;
+		int32_t L_16 = V_3;
+		switch (L_16)
+		{
+			case 0:
+			{
+				goto IL_0099;
+			}
+			case 1:
+			{
+				goto IL_00a1;
+			}
+			case 2:
+			{
+				goto IL_00a9;
+			}
+			case 3:
+			{
+				goto IL_00b1;
+			}
+			case 4:
+			{
+				goto IL_00b9;
+			}
+			case 5:
+			{
+				goto IL_00c1;
+			}
+			case 6:
+			{
+				goto IL_00c9;
+			}
+		}
+	}
+	{
+		goto IL_00d1;
+	}
+
+IL_0099:
+	{
+		// disableAll();
+		FullVibrate_disableAll_mEFC31365A6551B909C107B99E77DC72498E8C25D(__this, /*hidden argument*/NULL);
+		// break;
+		goto IL_00d7;
+	}
+
+IL_00a1:
+	{
+		// enableLike();
+		FullVibrate_enableLike_mBAF93B48684BF6B8BCE7B330D90F36BEC758E975(__this, /*hidden argument*/NULL);
+		// break;
+		goto IL_00d7;
+	}
+
+IL_00a9:
+	{
+		// enableLove();
+		FullVibrate_enableLove_m85314ADE1E1951648DDA049E97B740847F003B37(__this, /*hidden argument*/NULL);
+		// break;
+		goto IL_00d7;
+	}
+
+IL_00b1:
+	{
+		// enableHaha();
+		FullVibrate_enableHaha_mFBA4E088F696B6E1DBAE4663239B7EB38CEFEAA3(__this, /*hidden argument*/NULL);
+		// break;
+		goto IL_00d7;
+	}
+
+IL_00b9:
+	{
+		// enableYay();
+		FullVibrate_enableYay_mF0106714543852D2923832E5A3158740CA5AEDF4(__this, /*hidden argument*/NULL);
+		// break;
+		goto IL_00d7;
+	}
+
+IL_00c1:
+	{
+		// enableSad();
+		FullVibrate_enableSad_m662006F3B09AEF6765C92E9628C05D52A7E205AA(__this, /*hidden argument*/NULL);
+		// break;
+		goto IL_00d7;
+	}
+
+IL_00c9:
+	{
+		// enableAngry();
+		FullVibrate_enableAngry_mD9D37FD8D012D10AF8722572857FCE7E48A9DA71(__this, /*hidden argument*/NULL);
+		// break;
+		goto IL_00d7;
+	}
+
+IL_00d1:
+	{
+		// enableAngry();
+		FullVibrate_enableAngry_mD9D37FD8D012D10AF8722572857FCE7E48A9DA71(__this, /*hidden argument*/NULL);
+	}
+
+IL_00d7:
 	{
 		// if (pressed == true)
-		bool L_11 = __this->get_pressed_25();
-		if (!L_11)
+		bool L_17 = __this->get_pressed_25();
+		if (!L_17)
 		{
-			goto IL_0063;
+			goto IL_00ee;
 		}
 	}
 	{
 		// i++;
-		int32_t L_12 = __this->get_i_22();
-		__this->set_i_22(((int32_t)il2cpp_codegen_add((int32_t)L_12, (int32_t)1)));
+		int32_t L_18 = __this->get_i_22();
+		__this->set_i_22(((int32_t)il2cpp_codegen_add((int32_t)L_18, (int32_t)1)));
 		// }
 		return;
 	}
 
-IL_0063:
+IL_00ee:
 	{
 		// else if(pressed == false)
-		bool L_13 = __this->get_pressed_25();
-		if (L_13)
+		bool L_19 = __this->get_pressed_25();
+		if (L_19)
 		{
-			goto IL_00bf;
+			goto IL_0150;
 		}
 	}
 	{
-		// if(i > 120) //Send message if the users presses for over 2 seconds
-		int32_t L_14 = __this->get_i_22();
-		if ((((int32_t)L_14) <= ((int32_t)((int32_t)120))))
+		// if(i > 60) //Send message if the users presses for over 2 seconds
+		int32_t L_20 = __this->get_i_22();
+		if ((((int32_t)L_20) <= ((int32_t)((int32_t)60))))
 		{
-			goto IL_00b8;
+			goto IL_0149;
 		}
 	}
 	{
 		// finalCount = pressCount - 1;
-		int32_t L_15 = __this->get_pressCount_23();
-		__this->set_finalCount_24(((int32_t)il2cpp_codegen_subtract((int32_t)L_15, (int32_t)1)));
+		int32_t L_21 = __this->get_pressCount_23();
+		__this->set_finalCount_24(((int32_t)il2cpp_codegen_subtract((int32_t)L_21, (int32_t)1)));
 		// Debug.Log("Final number:" + finalCount);
-		int32_t* L_16 = __this->get_address_of_finalCount_24();
-		String_t* L_17;
-		L_17 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_16, /*hidden argument*/NULL);
-		String_t* L_18;
-		L_18 = String_Concat_m4B4AB72618348C5DFBFBA8DED84B9E2EBDB55E1B(_stringLiteral1A14EF647EF9DE4C12BA49942F05FDFBFB847864, L_17, /*hidden argument*/NULL);
+		int32_t* L_22 = __this->get_address_of_finalCount_24();
+		String_t* L_23;
+		L_23 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_22, /*hidden argument*/NULL);
+		String_t* L_24;
+		L_24 = String_Concat_m4B4AB72618348C5DFBFBA8DED84B9E2EBDB55E1B(_stringLiteral1A14EF647EF9DE4C12BA49942F05FDFBFB847864, L_23, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
-		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_18, /*hidden argument*/NULL);
+		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_24, /*hidden argument*/NULL);
 		// Debug.Log(i);
-		int32_t L_19 = __this->get_i_22();
-		int32_t L_20 = L_19;
-		RuntimeObject * L_21 = Box(Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_il2cpp_TypeInfo_var, &L_20);
-		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_21, /*hidden argument*/NULL);
+		int32_t L_25 = __this->get_i_22();
+		int32_t L_26 = L_25;
+		RuntimeObject * L_27 = Box(Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_il2cpp_TypeInfo_var, &L_26);
+		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_27, /*hidden argument*/NULL);
 		// sendData.Play();
-		AudioSource_tC4BF65AF8CDCAA63724BB3CA59A7A29249269E6B * L_22 = __this->get_sendData_20();
-		NullCheck(L_22);
-		AudioSource_Play_mED16664B8F8F3E4D68785C8C00FC96C4DF053AE1(L_22, /*hidden argument*/NULL);
+		AudioSource_tC4BF65AF8CDCAA63724BB3CA59A7A29249269E6B * L_28 = __this->get_sendData_20();
+		NullCheck(L_28);
+		AudioSource_Play_mED16664B8F8F3E4D68785C8C00FC96C4DF053AE1(L_28, /*hidden argument*/NULL);
+		// reset();
+		FullVibrate_reset_m2C868CE8EB0754510D758B952326AC5B4F6A3140(__this, /*hidden argument*/NULL);
 	}
 
-IL_00b8:
+IL_0149:
 	{
 		// i = 0;
 		__this->set_i_22(0);
 	}
 
-IL_00bf:
+IL_0150:
 	{
 		// }
 		return;
@@ -4456,11 +4605,10 @@ IL_00bf:
 // System.Void FullVibrate::incrementCount()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_incrementCount_m8001D6D727BCCF4F4D993B704AE967E2D2E9806C (FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82 * __this, const RuntimeMethod* method)
 {
-	int32_t V_0 = 0;
 	{
-		// if(pressCount <= 6)
+		// if(pressCount < 6)
 		int32_t L_0 = __this->get_pressCount_23();
-		if ((((int32_t)L_0) > ((int32_t)6)))
+		if ((((int32_t)L_0) >= ((int32_t)6)))
 		{
 			goto IL_0017;
 		}
@@ -4473,94 +4621,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_incrementCount_m8001D6D727BC
 
 IL_0017:
 	{
-		// switch(pressCount)
-		int32_t L_2 = __this->get_pressCount_23();
-		V_0 = L_2;
-		int32_t L_3 = V_0;
-		switch (((int32_t)il2cpp_codegen_subtract((int32_t)L_3, (int32_t)1)))
-		{
-			case 0:
-			{
-				goto IL_0040;
-			}
-			case 1:
-			{
-				goto IL_0047;
-			}
-			case 2:
-			{
-				goto IL_004e;
-			}
-			case 3:
-			{
-				goto IL_0055;
-			}
-			case 4:
-			{
-				goto IL_005c;
-			}
-			case 5:
-			{
-				goto IL_0063;
-			}
-		}
-	}
-	{
-		goto IL_006a;
-	}
-
-IL_0040:
-	{
-		// enableLike();
-		FullVibrate_enableLike_mBAF93B48684BF6B8BCE7B330D90F36BEC758E975(__this, /*hidden argument*/NULL);
-		// break;
+		// }
 		return;
 	}
-
-IL_0047:
+}
+// System.Void FullVibrate::reset()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_reset_m2C868CE8EB0754510D758B952326AC5B4F6A3140 (FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82 * __this, const RuntimeMethod* method)
+{
 	{
-		// enableLove();
-		FullVibrate_enableLove_m85314ADE1E1951648DDA049E97B740847F003B37(__this, /*hidden argument*/NULL);
-		// break;
-		return;
-	}
-
-IL_004e:
-	{
-		// enableHaha();
-		FullVibrate_enableHaha_mFBA4E088F696B6E1DBAE4663239B7EB38CEFEAA3(__this, /*hidden argument*/NULL);
-		// break;
-		return;
-	}
-
-IL_0055:
-	{
-		// enableYay();
-		FullVibrate_enableYay_mF0106714543852D2923832E5A3158740CA5AEDF4(__this, /*hidden argument*/NULL);
-		// break;
-		return;
-	}
-
-IL_005c:
-	{
-		// enableSad();
-		FullVibrate_enableSad_m662006F3B09AEF6765C92E9628C05D52A7E205AA(__this, /*hidden argument*/NULL);
-		// break;
-		return;
-	}
-
-IL_0063:
-	{
-		// enableAngry();
-		FullVibrate_enableAngry_mD9D37FD8D012D10AF8722572857FCE7E48A9DA71(__this, /*hidden argument*/NULL);
-		// break;
-		return;
-	}
-
-IL_006a:
-	{
-		// disableAll();
-		FullVibrate_disableAll_mEFC31365A6551B909C107B99E77DC72498E8C25D(__this, /*hidden argument*/NULL);
+		// pressCount = 0;
+		__this->set_pressCount_23(0);
+		// timeOfLastPress = 0.0f;
+		__this->set_timeOfLastPress_26((0.0f));
 		// }
 		return;
 	}
@@ -4571,25 +4643,58 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_TaskOnClick_m06A53F42DC637F8
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE9BD562C3D7043B864E8D7292B9784C2E9984BF0);
 		s_Il2CppMethodInitialized = true;
 	}
+	float V_0 = 0.0f;
 	{
+		// if(Time.time - timeOfLastPress > 5f) //If its been more than 5 seconds, record as accidental press
+		float L_0;
+		L_0 = Time_get_time_m1A186074B1FCD448AB13A4B9D715AB9ED0B40844(/*hidden argument*/NULL);
+		float L_1 = __this->get_timeOfLastPress_26();
+		if ((!(((float)((float)il2cpp_codegen_subtract((float)L_0, (float)L_1))) > ((float)(5.0f)))))
+		{
+			goto IL_003c;
+		}
+	}
+	{
+		// reset();
+		FullVibrate_reset_m2C868CE8EB0754510D758B952326AC5B4F6A3140(__this, /*hidden argument*/NULL);
+		// Information = Information + " reset at " + Time.time.ToString();
+		String_t* L_2 = __this->get_Information_27();
+		float L_3;
+		L_3 = Time_get_time_m1A186074B1FCD448AB13A4B9D715AB9ED0B40844(/*hidden argument*/NULL);
+		V_0 = L_3;
+		String_t* L_4;
+		L_4 = Single_ToString_m80E7ABED4F4D73F2BE19DDB80D3D92FCD8DFA010((float*)(&V_0), /*hidden argument*/NULL);
+		String_t* L_5;
+		L_5 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_2, _stringLiteralE9BD562C3D7043B864E8D7292B9784C2E9984BF0, L_4, /*hidden argument*/NULL);
+		__this->set_Information_27(L_5);
+	}
+
+IL_003c:
+	{
+		// Information = Information + " " + pressCount.ToString();
+		String_t* L_6 = __this->get_Information_27();
+		int32_t* L_7 = __this->get_address_of_pressCount_23();
+		String_t* L_8;
+		L_8 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_7, /*hidden argument*/NULL);
+		String_t* L_9;
+		L_9 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_6, _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745, L_8, /*hidden argument*/NULL);
+		__this->set_Information_27(L_9);
 		// Handheld.Vibrate();
 		Handheld_Vibrate_m521B854160443BEBA8D2D3BE63641000E1DAA82E(/*hidden argument*/NULL);
 		// audioData.Play();
-		AudioSource_tC4BF65AF8CDCAA63724BB3CA59A7A29249269E6B * L_0 = __this->get_audioData_19();
-		NullCheck(L_0);
-		AudioSource_Play_mED16664B8F8F3E4D68785C8C00FC96C4DF053AE1(L_0, /*hidden argument*/NULL);
+		AudioSource_tC4BF65AF8CDCAA63724BB3CA59A7A29249269E6B * L_10 = __this->get_audioData_19();
+		NullCheck(L_10);
+		AudioSource_Play_mED16664B8F8F3E4D68785C8C00FC96C4DF053AE1(L_10, /*hidden argument*/NULL);
 		// incrementCount();
 		FullVibrate_incrementCount_m8001D6D727BCCF4F4D993B704AE967E2D2E9806C(__this, /*hidden argument*/NULL);
-		// Debug.Log(pressCount);
-		int32_t L_1 = __this->get_pressCount_23();
-		int32_t L_2 = L_1;
-		RuntimeObject * L_3 = Box(Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_il2cpp_TypeInfo_var, &L_2);
-		IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
-		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_3, /*hidden argument*/NULL);
+		// timeOfLastPress = Time.time;
+		float L_11;
+		L_11 = Time_get_time_m1A186074B1FCD448AB13A4B9D715AB9ED0B40844(/*hidden argument*/NULL);
+		__this->set_timeOfLastPress_26(L_11);
 		// pressed = false;
 		__this->set_pressed_25((bool)0);
 		// }
@@ -4599,30 +4704,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_TaskOnClick_m06A53F42DC637F8
 // System.Void FullVibrate::OnPointerDown(UnityEngine.EventSystems.PointerEventData)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_OnPointerDown_mD5FBE04600E20C322C76E7BEB0D55CD75B643E02 (FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82 * __this, PointerEventData_tC6C1BEE9D4C8755A31DA7FC0C9A1F28A36456954 * ___eventData0, const RuntimeMethod* method)
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Boolean_t07D1E3F34E4813023D64F584DFF7B34C9D922F37_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
 	{
 		// pressed = true;
 		__this->set_pressed_25((bool)1);
-		// Debug.Log(pressed);
-		bool L_0 = __this->get_pressed_25();
-		bool L_1 = L_0;
-		RuntimeObject * L_2 = Box(Boolean_t07D1E3F34E4813023D64F584DFF7B34C9D922F37_il2cpp_TypeInfo_var, &L_1);
-		IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
-		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_2, /*hidden argument*/NULL);
-		// }
-		return;
-	}
-}
-// System.Void FullVibrate::OnPointerUp(UnityEngine.EventSystems.PointerEventData)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_OnPointerUp_m879C29C96B39CE2362A381598EE71F583E9B644F (FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82 * __this, PointerEventData_tC6C1BEE9D4C8755A31DA7FC0C9A1F28A36456954 * ___eventData0, const RuntimeMethod* method)
-{
-	{
 		// }
 		return;
 	}
@@ -4630,13 +4714,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate_OnPointerUp_m879C29C96B39CE2
 // System.Void FullVibrate::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FullVibrate__ctor_m3C25922FB431EFE86A41F5443A418EDFFA9BFEA4 (FullVibrate_tC682521777114F02C39901683C6FC877A3F2CF82 * __this, const RuntimeMethod* method)
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
 	{
-		// [SerializeField] private float shakeDetectionThreshold = 2.0f;
-		__this->set_shakeDetectionThreshold_13((2.0f));
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// [SerializeField] private float shakeDetectionThreshold = 3.0f;
+		__this->set_shakeDetectionThreshold_13((3.0f));
 		// private float accelerometerUpdateInterval = 1.0f / 60.0f;
 		__this->set_accelerometerUpdateInterval_14((0.0166666675f));
 		// private float lowPassKernelWidthInSeconds = 1.0f;
 		__this->set_lowPassKernelWidthInSeconds_15((1.0f));
+		// protected string Information = "";
+		__this->set_Information_27(_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 		MonoBehaviour__ctor_mC0995D847F6A95B1A553652636C38A2AA8B13BED(__this, /*hidden argument*/NULL);
 		return;
 	}
@@ -4753,7 +4845,7 @@ IL_0017:
 		// UnityWebRequest www = UnityWebRequest.Post(URL, form);
 		DataCollection_t1BFF1BB93F4EB29799BD32F2A9CDCD030D6163E6 * L_7 = V_1;
 		NullCheck(L_7);
-		String_t* L_8 = L_7->get_URL_4();
+		String_t* L_8 = L_7->get_URL_28();
 		WWWForm_t078274293DA1BDA9AB5689AF8BCBF0EE17A2BABB * L_9 = V_2;
 		UnityWebRequest_tB75B39F6951CA0DBA2D5BEDF85FDCAAC6026A37E * L_10;
 		L_10 = UnityWebRequest_Post_m5F29B83B6FEDEAEAAC938DD26AE484A2750DB646(L_8, L_9, /*hidden argument*/NULL);

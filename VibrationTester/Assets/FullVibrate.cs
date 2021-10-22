@@ -120,7 +120,7 @@ public class FullVibrate : MonoBehaviour, IPointerDownHandler
     #region
     [Header("Shake Detection")]
     public Action OnShake;
-    [SerializeField] private float shakeDetectionThreshold = 2.0f;
+    [SerializeField] private float shakeDetectionThreshold = 3.0f;
     private float accelerometerUpdateInterval = 1.0f / 60.0f;
     private float lowPassKernelWidthInSeconds = 1.0f;
     private float lowPassfilterFactor;
@@ -170,31 +170,11 @@ public class FullVibrate : MonoBehaviour, IPointerDownHandler
             Information = Information + " shake at" + Time.time.ToString();
         }
 
-        if (pressed == true)
+        switch (pressCount)
         {
-            i++;
-        }
-        else if(pressed == false)
-        {
-            if(i > 120) //Send message if the users presses for over 2 seconds
-            {
-                finalCount = pressCount - 1;
-                Debug.Log("Final number:" + finalCount);
-                Debug.Log(i);
-                sendData.Play();
-            }
-            i = 0;
-        }
-    }
-
-    void incrementCount()
-    {
-        if(pressCount <= 6)
-        {
-            pressCount++;
-        }
-        switch(pressCount)
-        {
+            case 0:
+                disableAll();
+                break;
             case 1:
                 enableLike();
                 break;
@@ -216,6 +196,31 @@ public class FullVibrate : MonoBehaviour, IPointerDownHandler
             default:
                 enableAngry();
                 break;
+        }
+
+        if (pressed == true)
+        {
+            i++;
+        }
+        else if(pressed == false)
+        {
+            if(i > 60) //Send message if the users presses for over 2 seconds
+            {
+                finalCount = pressCount - 1;
+                Debug.Log("Final number:" + finalCount);
+                Debug.Log(i);
+                sendData.Play();
+                reset();
+            }
+            i = 0;
+        }
+    }
+
+    void incrementCount()
+    {
+        if(pressCount < 6)
+        {
+            pressCount++;
         }
     }
 
